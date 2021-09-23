@@ -1,0 +1,2 @@
+如果只使用一个python版本，管理多个包的话，还是使用venv
+使用多个python版本的话，使用pyvenv
