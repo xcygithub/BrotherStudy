@@ -3,3 +3,36 @@ lgb,xgb不需要太多预处理，只需将类别特征自然数编码，不需�
 nn需要处理，特别是特征归一化
 
 ## 特征工程
+删除单值特征，高度相关特征，训练集和测试集不一样的特征
+从不同维度去构建特征，如贷款信息维度
+重点关注强特
+
+### 分类变量
+平均数编码
+目标编码 容易过拟合
+
+### 数值型变量
+决策树分箱效果应该是最好的，但也减少了信息
+lgb分割特征就相当于分箱，还基于信息增益
+
+## 特征选择
+过滤和嵌入用的较多，封装太耗费时间
+如果一个变量加入模型，模型效果没有提升，没进入前20特征，就没有必要加入
+
+## 模型调参
+模型调参是有效果的
+换随机数种子是有效果的
+num_leaves应该远小于2^(max_depth)
+
+模型过拟合怎么办
+
+decrease feature_fraction
+decrease bagging_fraction
+min_data_in_leaf min_sum_hessian_leaf
+lambda_l1 lambda_l2 min_gain_to_split
+
+
+模型欠拟合怎么办
+加树，decrease learning_rate
+increase max_depth
+increase num_leaves
