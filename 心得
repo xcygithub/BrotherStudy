@@ -33,6 +33,6 @@ lambda_l1 lambda_l2 min_gain_to_split
 
 
 模型欠拟合怎么办
-加树，decrease learning_rate
+增加弱学习器个数，decrease learning_rate
 increase max_depth
 increase num_leaves
