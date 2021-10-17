@@ -22,10 +22,10 @@ lgb分割特征就相当于分箱，还基于信息增益
 ## 模型调参
 模型调参是有效果的
 换随机数种子是有效果的
-num_leaves应该远小于2^(max_depth)
+lgb中num_leaves应该远小于2^(max_depth) 叶子生长策略
 
 模型过拟合怎么办
-
+减少弱学习器个数，increase learning_rate
 decrease feature_fraction
 decrease bagging_fraction
 min_data_in_leaf min_sum_hessian_leaf
